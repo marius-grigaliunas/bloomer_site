@@ -5,8 +5,13 @@
 ## Features
 
 - [ ] Marketing page
-  - [ ] Hero section
-  - [ ] Newsletter signup
+  - [x] Hero section
+  - [x] Newsletter signup
   - [ ] Screenshots, mockups
+  - [ ] The why
+  - [ ] The when
+  - [ ] by who
 - [ ] Appwrite backend with database
+  - [x] Simple newsletter collection in the app's database
+  - [ ] login?
 - [ ] Dashboard for the app
