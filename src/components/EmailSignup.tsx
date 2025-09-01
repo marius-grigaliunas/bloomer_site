@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { SubmitEmail } from '@/lib/appwrite';
-import { ID } from 'appwrite';
 
 export default function EmailSignup() {
     const [email, setEmail] = useState('');
@@ -19,6 +18,7 @@ export default function EmailSignup() {
             setIsSubmitted(true);
         } catch (error) {
             setError('Something went wrong. Please try again.');
+            console.error(error);
         } finally {
             setIsLoading(false);
         }
@@ -28,10 +28,10 @@ export default function EmailSignup() {
         return (
             <div className="text-center p-6 bg-success/10 rounded-lg border border-success/20">
                 <p className="text-lg font-semibold text-success mb-2">
-                    Thanks for your trust, see you when it's out! 🌱
+                    Thanks for your trust, see you when it&apos;s out! 🌱
                 </p>
                 <p className="text-text-secondary">
-                    We'll email you as soon as Bloomer is ready.
+                    We&apos;ll email you as soon as Bloomer is ready.
                 </p>
             </div>
         );
