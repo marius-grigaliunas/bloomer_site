@@ -1,3 +1,5 @@
+import EmailSignup from '@/components/EmailSignup';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background-primary flex flex-col items-center justify-center p-8">
@@ -18,11 +20,7 @@ export default function Home() {
           <span>🌿</span>
         </div>
 
-        <div>
-          <button className="bg-primary-medium hover:bg-primary-deep text-white font-semibold py-4 px-8 rounded-lg text-xl shadow-lg transition-colors">
-            Get notified when Bloomer launches 📧
-          </button>
-        </div>
+        <EmailSignup/>
       </div>
     </main>
   )
