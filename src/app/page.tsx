@@ -1,4 +1,5 @@
 import EmailSignup from '@/components/EmailSignup';
+import WhySection from '@/components/WhySection';
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
       <div className="text-center max-w-4xl">
         <div className="mb-8">
           <h1 className="text-6xl font-bold text-text-primary mb-4">
-            Never kill another plant again 🌱
+            Never kill another plant again
           </h1>
           <p className="text-xl text-text-secondary mb-8">
             Bloomer identifies your plants and creates personalized watering schedules. 
@@ -20,6 +21,7 @@ export default function Home() {
           <span>🌿</span>
         </div>
 
+        <WhySection/>
         <EmailSignup/>
       </div>
     </main>
