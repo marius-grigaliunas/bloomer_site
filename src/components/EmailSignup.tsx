@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SubmitEmail } from '@/lib/appwrite';
+import { validateEmail, getEmailValidationMessage } from '@/lib/emailValidation';
 import Link from 'next/link';
 
 export default function EmailSignup() {
@@ -8,11 +9,33 @@ export default function EmailSignup() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [validationError, setValidationError] = useState('');
+    const [hasTypo, setHasTypo] = useState(false);
+
+    // Real-time email validation
+    useEffect(() => {
+        if (email) {
+            const validationMessage = getEmailValidationMessage(email);
+            setValidationError(validationMessage || '');
+            setHasTypo(validationMessage?.includes('Did you mean') || false);
+        } else {
+            setValidationError('');
+            setHasTypo(false);
+        }
+    }, [email]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         setError('');
+
+        // Final validation before submission
+        const validation = validateEmail(email);
+        if (!validation.isValid) {
+            setError(validation.error || 'Please enter a valid email address');
+            setIsLoading(false);
+            return;
+        }
 
         try {
             await SubmitEmail(email);
@@ -47,17 +70,32 @@ export default function EmailSignup() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="flex-1 px-4 py-3 border border-secondary-medium/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-medium"
+                    className={`flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
+                        validationError 
+                            ? 'border-danger focus:ring-danger/50' 
+                            : hasTypo 
+                                ? 'border-warning focus:ring-warning/50'
+                                : 'border-secondary-medium/30 focus:ring-primary-medium'
+                    }`}
                     disabled={isLoading}
                 />
                 <button
                     type="submit"
-                    disabled={isLoading || !email}
+                    disabled={isLoading || !email || !!validationError}
                     className="bg-primary-medium hover:bg-primary-deep disabled:bg-secondary-medium/50 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
                 >
                     {isLoading ? 'Adding...' : 'Get notified 📧'}
                 </button>
             </form>
+            
+            {/* Validation feedback */}
+            {validationError && (
+                <p className={`text-sm mb-4 ${hasTypo ? 'text-warning' : 'text-danger'}`}>
+                    {validationError}
+                </p>
+            )}
+            
+            {/* Server error */}
             {error && <p className="text-danger text-sm mb-4">{error}</p>}
             <p className="text-sm text-text-secondary">
                 By signing up, you agree to our{' '}

@@ -8,7 +8,7 @@
 
 - [ ] Mobile Responsive Design - Most users will view on mobile
 - [ ] Fast Loading Speed - Optimize images and minimize code
-- [ ] Email Validation - Prevent fake signups and typos
+- [x] Email Validation - Prevent fake signups and typos
 - [x] Confirmation Message - "Thanks for signing up!" feedback
 - [ ] Error Handling - Clear messages if signup fails
 
