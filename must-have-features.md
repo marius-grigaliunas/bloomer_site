@@ -2,9 +2,7 @@
 
 ## Legal & Compliance
 
-- [ ] Privacy Policy - Required for email collection, especially in EU
-- [ ] Terms of Service - Basic legal protection
-- [ ] Cookie Notice - If using analytics or tracking
+- [x] Privacy Policy - Required for email collection, especially in EU
 
 ## User Experience
 
@@ -32,3 +30,4 @@
 - [ ] Email Management System - MailChimp, ConvertKit, or similar for the waitlist
 - [x] SSL Certificate - HTTPS for security and trust
 - [x] Domain Name - Professional custom domain vs subdomain
+  
