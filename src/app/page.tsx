@@ -3,7 +3,7 @@ import WhySection from '@/components/WhySection';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background-primary flex flex-col items-center justify-center p-8">
+    <main className="min-h-screen bg-background-primary flex flex-col items-center justify-center p-8 pt-24">
       <div className="text-center max-w-4xl">
         <div className="mb-8">
           <h1 className="text-6xl font-bold text-text-primary mb-4">
@@ -21,7 +21,7 @@ export default function Home() {
           <span>🌿</span>
         </div>
 
-        <WhySection/>
+        <WhySection />
         <EmailSignup/>
       </div>
     </main>

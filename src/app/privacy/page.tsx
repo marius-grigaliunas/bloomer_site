@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen bg-background-primary">
-      <div className="max-w-4xl mx-auto px-8 py-16">
+      <div className="max-w-4xl mx-auto px-8 py-16 pt-24">
         {/* Header */}
         <div className="mb-12">
           <Link 

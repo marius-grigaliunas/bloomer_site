@@ -2,8 +2,8 @@ import { Client, Databases, ID } from 'appwrite';
 import { validateEmail } from './emailValidation';
 
 const client = new Client()
-  .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!) // Your Appwrite endpoint
-  .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID!); // Your project ID from Appwrite console
+  .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!) 
+  .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID!);
 
 export const databases = new Databases(client);
 
@@ -32,13 +32,7 @@ export const SubmitEmail = async (email: string) => {
 
     // Normalize email (trim and lowercase)
     const normalizedEmail = email.trim().toLowerCase();
-    
-    console.log('Appwrite config:', {
-        endpoint,
-        projectId,
-        databaseId,
-        collectionId
-    });
+
     
     try {
         const response = await databases.createDocument(
@@ -50,7 +44,6 @@ export const SubmitEmail = async (email: string) => {
             }
         );
 
-        console.log('Email added successfully:', response);
         return response;
     }
     catch (error) {
