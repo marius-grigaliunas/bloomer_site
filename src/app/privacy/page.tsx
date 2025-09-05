@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
             
             <section>
               <p className="text-text-secondary leading-relaxed">
-                This Privacy Notice for Bloomer ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
+                This Privacy Notice for Bloomer (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), describes how and why we might access, collect, store, use, and/or share (&quot;process&quot;) your personal information when you use our services (&quot;Services&quot;), including when you:
               </p>
               <ul className="list-disc list-inside space-y-2 text-text-secondary mt-4">
                 <li>Visit our website at <a href="https://bloomerapp.info" target="_blank" rel="noopener noreferrer" className="text-primary-medium hover:text-primary-deep underline">https://bloomerapp.info</a> or any website of ours that links to this Privacy Notice</li>
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
                 
                 <div>
                   <p className="text-text-secondary leading-relaxed">
-                    <strong>Do we process any sensitive personal information?</strong> Some of the information may be considered "special" or "sensitive" in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.
+                    <strong>Do we process any sensitive personal information?</strong> Some of the information may be considered &quot;special&quot; or &quot;sensitive&quot; in certain jurisdictions, for example your racial or ethnic origins, sexual orientation, and religious beliefs. We do not process sensitive personal information.
                   </p>
                 </div>
                 
@@ -155,8 +155,8 @@ export default function PrivacyPolicy() {
               </p>
               
               <ul className="list-disc list-inside space-y-2 text-text-secondary mb-4">
-                <li><strong>To send you marketing and promotional communications.</strong> We may process the personal information you send to us for our marketing purposes, if this is in accordance with your marketing preferences. You can opt out of our marketing emails at any time. For more information, see "WHAT ARE YOUR PRIVACY RIGHTS?" below.</li>
-                <li><strong>To save or protect an individual's vital interest.</strong> We may process your information when necessary to save or protect an individual's vital interest, such as to prevent harm.</li>
+                <li><strong>To send you marketing and promotional communications.</strong> We may process the personal information you send to us for our marketing purposes, if this is in accordance with your marketing preferences. You can opt out of our marketing emails at any time. For more information, see &quot;WHAT ARE YOUR PRIVACY RIGHTS?&quot; below.</li>
+                <li><strong>To save or protect an individual&apos;s vital interest.</strong> We may process your information when necessary to save or protect an individual&apos;s vital interest, such as to prevent harm.</li>
               </ul>
             </section>
 
@@ -258,7 +258,7 @@ export default function PrivacyPolicy() {
               </p>
               
               <p className="text-text-secondary leading-relaxed mb-4">
-                In some regions (like the EEA, UK, Switzerland, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. If a decision that produces legal or similarly significant effects is made solely by automated means, we will inform you, explain the main factors, and offer a simple way to request human review. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below.
+                In some regions (like the EEA, UK, Switzerland, and Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. If a decision that produces legal or similarly significant effects is made solely by automated means, we will inform you, explain the main factors, and offer a simple way to request human review. In certain circumstances, you may also have the right to object to the processing of your personal information. You can make such a request by contacting us by using the contact details provided in the section &quot;HOW CAN YOU CONTACT US ABOUT THIS NOTICE?&quot; below.
               </p>
               
               <p className="text-text-secondary leading-relaxed mb-4">
@@ -276,7 +276,7 @@ export default function PrivacyPolicy() {
               <div className="space-y-4">
                 <div>
                   <p className="text-text-secondary leading-relaxed">
-                    <strong><u>Withdrawing your consent:</u></strong> If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below.
+                    <strong><u>Withdrawing your consent:</u></strong> If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section &quot;HOW CAN YOU CONTACT US ABOUT THIS NOTICE?&quot; below.
                   </p>
                 </div>
                 
@@ -288,7 +288,7 @@ export default function PrivacyPolicy() {
                 
                 <div>
                   <p className="text-text-secondary leading-relaxed">
-                    <strong><u>Opting out of marketing and promotional communications:</u></strong> You can unsubscribe from our marketing and promotional communications at any time by contacting us using the details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below. You will then be removed from the marketing lists. However, we may still communicate with you — for example, to send you service-related messages that are necessary for the administration and use of your account, to respond to service requests, or for other non-marketing purposes.
+                    <strong><u>Opting out of marketing and promotional communications:</u></strong> You can unsubscribe from our marketing and promotional communications at any time by contacting us using the details provided in the section &quot;HOW CAN YOU CONTACT US ABOUT THIS NOTICE?&quot; below. You will then be removed from the marketing lists. However, we may still communicate with you — for example, to send you service-related messages that are necessary for the administration and use of your account, to respond to service requests, or for other non-marketing purposes.
                   </p>
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default function PrivacyPolicy() {
                 7. CONTROLS FOR DO-NOT-TRACK FEATURES
               </h2>
               <p className="text-text-secondary leading-relaxed mb-4">
-                Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.
+                Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track (&quot;DNT&quot;) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.
               </p>
               
               <p className="text-text-secondary leading-relaxed">
@@ -323,7 +323,7 @@ export default function PrivacyPolicy() {
                 Categories of Personal Information We Collect
               </h3>
               <p className="text-text-secondary leading-relaxed mb-4">
-                The table below shows the categories of personal information we have collected in the past twelve (12) months. The table includes illustrative examples of each category and does not reflect the personal information we collect from you. For a comprehensive inventory of all personal information we process, please refer to the section "WHAT INFORMATION DO WE COLLECT?" above.
+                The table below shows the categories of personal information we have collected in the past twelve (12) months. The table includes illustrative examples of each category and does not reflect the personal information we collect from you. For a comprehensive inventory of all personal information we process, please refer to the section &quot;WHAT INFORMATION DO WE COLLECT?&quot; above.
               </p>
               
               <div className="overflow-x-auto">
@@ -388,7 +388,7 @@ export default function PrivacyPolicy() {
                     </tr>
                     <tr>
                       <td className="border border-secondary-medium/30 p-3 text-text-secondary">K. Inferences drawn from collected personal information</td>
-                      <td className="border border-secondary-medium/30 p-3 text-text-secondary">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual's preferences and characteristics</td>
+                      <td className="border border-secondary-medium/30 p-3 text-text-secondary">Inferences drawn from any of the collected personal information listed above to create a profile or summary about, for example, an individual&apos;s preferences and characteristics</td>
                       <td className="border border-secondary-medium/30 p-3 text-center text-text-secondary">NO</td>
                     </tr>
                     <tr>
@@ -418,14 +418,14 @@ export default function PrivacyPolicy() {
                 Sources of Personal Information
               </h3>
               <p className="text-text-secondary leading-relaxed mb-4">
-                Learn more about the sources of personal information we collect in "WHAT INFORMATION DO WE COLLECT?" above.
+                Learn more about the sources of personal information we collect in &quot;WHAT INFORMATION DO WE COLLECT?&quot; above.
               </p>
               
               <h3 className="text-xl font-medium text-text-primary mb-2">
                 How We Use and Share Personal Information
               </h3>
               <p className="text-text-secondary leading-relaxed mb-4">
-                Learn more about how we use your personal information in the section, "HOW DO WE PROCESS YOUR INFORMATION?" above.
+                Learn more about how we use your personal information in the section, &quot;HOW DO WE PROCESS YOUR INFORMATION?&quot; above.
               </p>
               
               <p className="text-text-secondary leading-relaxed mb-4">
@@ -433,11 +433,11 @@ export default function PrivacyPolicy() {
               </p>
               
               <p className="text-text-secondary leading-relaxed mb-4">
-                We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Learn more about how we disclose personal information to in the section, "WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?" above.
+                We may disclose your personal information with our service providers pursuant to a written contract between us and each service provider. Learn more about how we disclose personal information to in the section, &quot;WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?&quot; above.
               </p>
               
               <p className="text-text-secondary leading-relaxed mb-4">
-                We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be "selling" of your personal information.
+                We may use your personal information for our own business purposes, such as for undertaking internal research for technological development and demonstration. This is not considered to be &quot;selling&quot; of your personal information.
               </p>
               
               <p className="text-text-secondary leading-relaxed mb-4">
@@ -458,7 +458,7 @@ export default function PrivacyPolicy() {
                 <li><strong>Right to request</strong> the deletion of your personal data</li>
                 <li><strong>Right to obtain a copy</strong> of the personal data you previously shared with us</li>
                 <li><strong>Right to non-discrimination</strong> for exercising your rights</li>
-                <li><strong>Right to opt out</strong> of the processing of your personal data if it is used for targeted advertising (or sharing as defined under California's privacy law), the sale of personal data, or profiling in furtherance of decisions that produce legal or similarly significant effects ("profiling")</li>
+                <li><strong>Right to opt out</strong> of the processing of your personal data if it is used for targeted advertising (or sharing as defined under California&apos;s privacy law), the sale of personal data, or profiling in furtherance of decisions that produce legal or similarly significant effects (&quot;profiling&quot;)</li>
               </ul>
               
               <p className="text-text-secondary leading-relaxed mb-4">
@@ -504,10 +504,10 @@ export default function PrivacyPolicy() {
               </p>
               
               <h3 className="text-xl font-medium text-text-primary mb-2">
-                California "Shine The Light" Law
+                California &quot;Shine The Light&quot; Law
               </h3>
               <p className="text-text-secondary leading-relaxed">
-                California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us by using the contact details provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?" below.
+                California Civil Code Section 1798.83, also known as the &quot;Shine The Light&quot; law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us by using the contact details provided in the section &quot;HOW CAN YOU CONTACT US ABOUT THIS NOTICE?&quot; below.
               </p>
             </section>
 
@@ -520,7 +520,7 @@ export default function PrivacyPolicy() {
               </p>
               
               <p className="text-text-secondary leading-relaxed">
-                We may update this Privacy Notice from time to time. The updated version will be indicated by an updated "Revised" date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.
+                We may update this Privacy Notice from time to time. The updated version will be indicated by an updated &quot;Revised&quot; date at the top of this Privacy Notice. If we make material changes to this Privacy Notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this Privacy Notice frequently to be informed of how we are protecting your information.
               </p>
             </section>
 

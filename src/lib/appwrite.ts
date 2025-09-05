@@ -102,7 +102,7 @@ export const SubmitUserMessage = async (message: string, email: string) => {
             config.userMessagesCollectionId,
             ID.unique(),
             {
-                email: email,
+                email: normalizedEmail,
                 message: message
             }
         );

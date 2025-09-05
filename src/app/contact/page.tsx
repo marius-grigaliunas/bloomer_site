@@ -53,7 +53,7 @@ export default function Contact() {
                             Message Sent!
                         </h1>
                         <p className="text-xl text-text-secondary mb-8 leading-relaxed">
-                            Thank you for reaching out. We'll get back to you soon!
+                            Thank you for reaching out. We&apos;ll get back to you soon!
                         </p>
                     </div>
                     
@@ -85,8 +85,8 @@ export default function Contact() {
                         Get in Touch
                     </h1>
                     <p className="text-lg text-text-secondary mb-6 leading-relaxed max-w-2xl mx-auto">
-                        Have questions about Bloomer? We'd love to hear from you! 
-                        Send us a message and we'll get back to you as soon as possible.
+                        Have questions about Bloomer? We&apos;d love to hear from you! 
+                        Send us a message and we&apos;ll get back to you as soon as possible.
                     </p>
                 </div>
 
