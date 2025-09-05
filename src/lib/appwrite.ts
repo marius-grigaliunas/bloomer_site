@@ -1,6 +1,14 @@
 import { Client, Databases, ID } from 'appwrite';
 import { validateEmail } from './emailValidation';
 
+const config = {
+    endpoint: process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT,
+    projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID,
+    databaseId: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+    waitlistCollectionId: process.env.NEXT_PUBLIC_APPWRITE_WAITLIST_COLLECTION_ID,
+    userMessagesCollectionId: process.env.NEXT_PUBLIC_APPWRITE_USER_MESSAGES_ID
+}
+
 const client = new Client()
   .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!) 
   .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID!);
@@ -8,18 +16,13 @@ const client = new Client()
 export const databases = new Databases(client);
 
 export const SubmitEmail = async (email: string) => {
-    // Check environment variables
-    const endpoint = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
-    const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID;
-    const databaseId = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID;
-    const collectionId = process.env.NEXT_PUBLIC_APPWRITE_WAITLIST_COLLECTION_ID;
 
-    if (!endpoint || !projectId || !databaseId || !collectionId) {
+    if (!config.endpoint || !config.projectId || !config.databaseId || !config.waitlistCollectionId) {
         console.error('Missing Appwrite environment variables:', {
-            endpoint: !!endpoint,
-            projectId: !!projectId,
-            databaseId: !!databaseId,
-            collectionId: !!collectionId
+            endpoint: !!config.endpoint,
+            projectId: !!config.projectId,
+            databaseId: !!config.databaseId,
+            collectionId: !!config.waitlistCollectionId
         });
         throw new Error('Appwrite configuration is missing. Please check your environment variables.');
     }
@@ -36,8 +39,8 @@ export const SubmitEmail = async (email: string) => {
     
     try {
         const response = await databases.createDocument(
-            databaseId,
-            collectionId,
+            config.databaseId,
+            config.waitlistCollectionId,
             ID.unique(),
             {
                 email: normalizedEmail
@@ -72,3 +75,46 @@ export const SubmitEmail = async (email: string) => {
         throw new Error(`Something went wrong: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
 } 
+
+export const SubmitUserMessage = async (message: string, email: string) => {
+    if (!config.endpoint || !config.projectId || !config.databaseId || !config.userMessagesCollectionId) {
+        console.error('Missing Appwrite environment variables:', {
+            endpoint: !!config.endpoint,
+            projectId: !!config.projectId,
+            databaseId: !!config.databaseId,
+            collectionId: !!config.userMessagesCollectionId
+        });
+        throw new Error('Appwrite configuration is missing. Please check your environment variables.');
+    }
+
+    // Server-side validation
+    const validation = validateEmail(email);
+    if (!validation.isValid) {
+        throw new Error(validation.error || 'Invalid email address');
+    }
+
+    // Normalize email (trim and lowercase)
+    const normalizedEmail = email.trim().toLowerCase();
+
+    try {
+        const response = await databases.createDocument(
+            config.databaseId,
+            config.userMessagesCollectionId,
+            ID.unique(),
+            {
+                email: email,
+                message: message
+            }
+        );
+
+        return response;
+    } catch (error) {
+        console.error('Detailed error adding user message:', {
+            error,
+            message: error instanceof Error ? error.message : 'Unknown error',
+            stack: error instanceof Error ? error.stack : undefined
+        });
+
+        throw new Error(`Something went wrong: ${error instanceof Error ? error.message : 'Unknown error'}`);
+     }
+}

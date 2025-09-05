@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { validateEmail } from '@/lib/emailValidation';
+import { SubmitUserMessage } from '@/lib/appwrite';
 
 export default function Contact() {
     const [email, setEmail] = useState('');
@@ -30,9 +31,7 @@ export default function Contact() {
         }
 
         try {
-            // For now, just simulate a successful submission
-            // You can replace this with actual form submission logic later
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await SubmitUserMessage(message, email);
             setIsSubmitted(true);
         } catch (error) {
             setError('Something went wrong. Please try again.');
