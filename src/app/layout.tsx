@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bloomer - Save your plants",
   description: "Created by Marius Grigaliunas",
+  viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({
