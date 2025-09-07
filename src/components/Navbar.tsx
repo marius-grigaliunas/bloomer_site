@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -37,8 +38,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl">🌱</span>
+          <Link href="/" className="flex items-center space-x-1">
+            <Image src="/images/bloomer-logo-nobackground.png" alt="Bloomer" width={52} height={52}/>
             <span className="text-xl font-bold text-foreground">Bloomer</span>
           </Link>
 
