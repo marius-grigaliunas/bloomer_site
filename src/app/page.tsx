@@ -1,6 +1,7 @@
 import EmailSignup from '@/components/EmailSignup';
 import WhySection from '@/components/WhySection';
 import AppCarousel from '@/components/AppCarousel';
+import ComingSoon from '@/components/ComingSoon';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <AppCarousel />
 
         <WhySection />
+        <ComingSoon />
         <EmailSignup/>
       </div>
     </main>
