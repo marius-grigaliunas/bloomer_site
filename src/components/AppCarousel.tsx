@@ -47,10 +47,7 @@ export default function AppCarousel() {
     pauseAndResume();
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-    pauseAndResume();
-  };
+
 
   const getImagePosition = (index: number) => {
     // Calculate the relative position considering wrapping

@@ -12,7 +12,7 @@ export default function ComingSoon() {
             Coming Soon
           </h2>
           <p className="text-lg text-text-secondary leading-relaxed">
-            We're finishing up the details and will be launching soon for android devices
+            We&apos;re finishing up the details and will be launching soon for android devices
           </p>
         </div>
         
