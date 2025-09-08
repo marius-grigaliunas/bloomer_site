@@ -1,5 +1,6 @@
 import EmailSignup from '@/components/EmailSignup';
 import WhySection from '@/components/WhySection';
+import AppCarousel from '@/components/AppCarousel';
 
 export default function Home() {
   return (
@@ -15,11 +16,8 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex justify-center items-center gap-8 mb-12 text-4xl">
-          <span>🥀</span>
-          <span className="text-2xl text-secondary-medium">→</span>
-          <span>🌿</span>
-        </div>
+        {/* App Screenshots Carousel */}
+        <AppCarousel />
 
         <WhySection />
         <EmailSignup/>
