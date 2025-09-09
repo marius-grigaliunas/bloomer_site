@@ -80,10 +80,10 @@ export default function AppCarousel() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto mb-12">
+    <div className="w-full max-w-8xl mx-auto">
       <div className="relative">
         {/* Main carousel container */}
-        <div className="relative h-96 md:h-[600px] flex items-center justify-center overflow-visible">
+        <div className="relative h-[500px] md:h-[700px] flex items-center justify-center overflow-visible">
           {/* All images container */}
           <div className="relative w-full h-full flex items-center justify-center">
             {images.map((image, index) => {
@@ -97,7 +97,7 @@ export default function AppCarousel() {
                   alt={`Bloomer app screenshot ${index + 1}`}
                   width={500}
                   height={500}
-                  className={`absolute transition-all duration-1500 ease-in-out object-contain rounded-lg shadow-lg max-w-96 max-h-96 md:max-w-[500px] md:max-h-[500px] ${position}`}
+                  className={`absolute transition-all duration-1500 ease-in-out object-contain rounded-2xl shadow-2xl max-w-80 max-h-80 md:max-w-[450px] md:max-h-[450px] ${position}`}
                   style={{ 
                     zIndex: index === currentIndex ? 10 : 5,
                     display: isVisible ? 'block' : 'none',

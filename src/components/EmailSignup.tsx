@@ -50,59 +50,88 @@ export default function EmailSignup() {
 
     if (isSubmitted) {
         return (
-            <div className="text-center p-6 bg-success/10 rounded-lg border border-success/20">
-                <p className="text-lg font-semibold text-success mb-2">
-                    Thanks for your trust, see you when it&apos;s out! 🌱
-                </p>
-                <p className="text-text-secondary">
-                    We&apos;ll email you as soon as Bloomer is ready.
-                </p>
+            <div className="bg-gradient-to-br from-brand-purple to-blue-600 text-white py-16 px-8 rounded-3xl">
+                <div className="max-w-4xl mx-auto text-center">
+                    <div className="mb-8">
+                        <div className="mb-4">
+                            <span className="inline-block bg-white/20 text-white font-semibold px-4 py-2 rounded-full text-sm">
+                                ✅ Successfully Added
+                            </span>
+                        </div>
+                        <h3 className="text-4xl font-bold text-white mb-4">
+                            You&apos;re all set!
+                        </h3>
+                        <p className="text-xl text-white/90 max-w-2xl mx-auto">
+                            Thanks for your trust, see you when it&apos;s out! 🌱
+                        </p>
+                    </div>
+                    <div className="p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 max-w-lg mx-auto">
+                        <p className="text-lg text-white/90">
+                            We&apos;ll email you as soon as Bloomer is ready.
+                        </p>
+                    </div>
+                </div>
             </div>
         );
     }
 
     return (
-        <div className="text-center">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-4">
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    required
-                    className={`flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 transition-colors ${
-                        validationError 
-                            ? 'border-danger focus:ring-danger/50' 
-                            : hasTypo 
-                                ? 'border-warning focus:ring-warning/50'
-                                : 'border-secondary-medium/30 focus:ring-primary-medium'
-                    }`}
-                    disabled={isLoading}
-                />
-                <button
-                    type="submit"
-                    disabled={isLoading || !email || !!validationError}
-                    className="bg-primary-medium hover:bg-primary-deep disabled:bg-secondary-medium/50 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
-                >
-                    {isLoading ? 'Adding...' : 'Get notified 📧'}
-                </button>
-            </form>
-            
-            {/* Validation feedback */}
-            {validationError && (
-                <p className={`text-sm mb-4 ${hasTypo ? 'text-warning' : 'text-danger'}`}>
-                    {validationError}
+        <div className="bg-gradient-to-br from-brand-purple to-blue-600 text-white py-16 px-8 rounded-3xl">
+            <div className="max-w-4xl mx-auto text-center">
+                <div className="mb-8">
+                    <div className="mb-4">
+                        <span className="inline-block bg-white/20 text-white font-semibold px-4 py-2 rounded-full text-sm">
+                            🚀 Early Access
+                        </span>
+                    </div>
+                    <h3 className="text-4xl font-bold text-white mb-4">
+                        Be the first to know when we launch
+                    </h3>
+                    <p className="text-xl text-white/90 max-w-2xl mx-auto">
+                        Join our early access list and get exclusive updates about Bloomer&apos;s development
+                    </p>
+                </div>
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-6">
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Enter your email address"
+                        required
+                        className={`flex-1 px-6 py-5 border-2 rounded-2xl focus:outline-none focus:ring-4 transition-all text-lg bg-white/10 backdrop-blur-sm border-white/20 text-white placeholder-white/70 ${
+                            validationError 
+                                ? 'border-red-400 focus:ring-red-400/20 focus:border-red-400' 
+                                : hasTypo 
+                                    ? 'border-yellow-400 focus:ring-yellow-400/20 focus:border-yellow-400'
+                                    : 'border-white/20 focus:ring-white/20 focus:border-white/40'
+                        }`}
+                        disabled={isLoading}
+                    />
+                    <button
+                        type="submit"
+                        disabled={isLoading || !email || !!validationError}
+                        className="bg-[#48bb78] hover:bg-[#38a169] disabled:bg-gray-400 text-white font-bold py-5 px-8 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl disabled:shadow-none"
+                    >
+                        {isLoading ? 'Adding...' : 'Get notified 📧'}
+                    </button>
+                </form>
+                
+                {/* Validation feedback */}
+                {validationError && (
+                    <p className={`text-sm mb-4 ${hasTypo ? 'text-yellow-300' : 'text-red-300'}`}>
+                        {validationError}
+                    </p>
+                )}
+                
+                {/* Server error */}
+                {error && <p className="text-red-300 text-sm mb-4">{error}</p>}
+                <p className="text-sm text-white/80">
+                    By signing up, you agree to our{' '}
+                    <Link href="/privacy" className="text-white hover:text-white/80 underline">
+                        Privacy Policy
+                    </Link>
                 </p>
-            )}
-            
-            {/* Server error */}
-            {error && <p className="text-danger text-sm mb-4">{error}</p>}
-            <p className="text-sm text-text-secondary">
-                By signing up, you agree to our{' '}
-                <Link href="/privacy" className="text-primary-medium hover:text-primary-deep underline">
-                    Privacy Policy
-                </Link>
-            </p>
+            </div>
         </div>
     );
 }

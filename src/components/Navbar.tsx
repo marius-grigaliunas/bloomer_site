@@ -22,6 +22,10 @@ export default function Navbar() {
     return pathname.startsWith(path);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Close mobile menu when pathname changes
   useEffect(() => {
     setIsOpen(false);
@@ -38,24 +42,30 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
-          <Link href="/" className="flex items-center space-x-1">
+          <button 
+            onClick={scrollToTop}
+            className="flex items-center space-x-1 hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-brand-purple/20 rounded-lg p-1"
+          >
             <Image src="/images/bloomer-logo-nobackground.png" alt="Bloomer" width={52} height={52}/>
             <span className="text-xl font-bold text-foreground">Bloomer</span>
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`relative text-sm font-medium transition-all duration-200 px-4 py-2 rounded-lg ${
                   isActive(item.href) 
-                    ? 'text-primary' 
-                    : 'text-muted-foreground'
+                    ? 'text-primary bg-primary/10' 
+                    : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                 }`}
               >
                 {item.label}
+                {isActive(item.href) && (
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>
+                )}
               </Link>
             ))}
           </div>
@@ -99,10 +109,10 @@ export default function Navbar() {
                           key={item.href}
                           href={item.href}
                           onClick={() => setIsOpen(false)}
-                          className={`flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+                          className={`flex items-center px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 transform hover:scale-105 ${
                             isActive(item.href) 
-                              ? 'text-[#4f772d] bg-[#4f772d]/15 border-l-4 border-[#4f772d] font-semibold' 
-                              : 'text-muted-foreground hover:text-foreground hover:bg-accent'
+                              ? 'text-[#4f772d] bg-[#4f772d]/15 border-l-4 border-[#4f772d] font-semibold shadow-sm' 
+                              : 'text-muted-foreground hover:text-foreground hover:bg-accent hover:shadow-sm'
                           }`}
                         >
                           {item.label}

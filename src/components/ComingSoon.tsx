@@ -2,18 +2,21 @@ import Image from 'next/image';
 
 export default function ComingSoon() {
   return (
-    <div className="text-center py-12 px-6">
-      <div className="max-w-2xl mx-auto">
-        <div className="mb-6">
-            <div className="flex justify-center">
-                <Image src="/images/bloomer-logo-nobackground.png" alt="bloomer logo" width={100} height={100} />
+    <div className="text-center px-6">
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-8">
+            <div className="flex justify-center mb-8">
+                <div className="relative">
+                  <Image src="/images/bloomer-logo-nobackground.png" alt="bloomer logo" width={120} height={120} className="drop-shadow-lg" />
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-brand-purple rounded-full animate-pulse"></div>
+                </div>
             </div>
-            <h2 className="text-4xl font-bold text-text-primary mb-4">
-            Coming Soon
-          </h2>
-          <p className="text-lg text-text-secondary leading-relaxed">
-            We&apos;re finishing up the details and will be launching soon for android devices
-          </p>
+            <h2 className="text-5xl md:text-6xl font-black text-text-primary mb-6">
+              Coming <span className="text-brand-purple">Soon</span>
+            </h2>
+            <p className="text-xl text-text-secondary leading-relaxed mb-4">
+              We&apos;re putting the finishing touches on Bloomer and will be launching soon for <span className="font-semibold text-primary-medium">Android devices</span>
+            </p>
         </div>
         
       </div>

@@ -10,15 +10,20 @@
   --color-background-surface: #ffffff;
   --color-primary-medium: #4f772d;
   --color-primary-deep: #2e7d32;
+  --color-primary-vibrant: #3d5a1f;
   --color-secondary-medium: #90a955;
   --color-secondary-deep: #4f772d;
   --color-accent: #e6b566;
+  --color-accent-vibrant: #d4a853;
+  --color-brand-purple: #8b5cf6;
+  --color-brand-purple-light: #a78bfa;
   --color-success: #2e7d32;
   --color-warning: #e6b566;
   --color-danger: #e53935;
   --color-info: #90a955;
-  --color-text-primary: #2f2f2f;
-  --color-text-secondary: #666666;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #6b7280;
 }
 
 @theme inline {
@@ -134,5 +139,21 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-slow-pulse {
+    animation: slow-pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes slow-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }
