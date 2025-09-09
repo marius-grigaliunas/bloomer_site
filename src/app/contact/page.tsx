@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { validateEmail } from '@/lib/emailValidation';
 import { SubmitUserMessage } from '@/lib/appwrite';
+import Footer from '@/components/Footer';
 
 export default function Contact() {
     const [email, setEmail] = useState('');
@@ -69,6 +70,7 @@ export default function Contact() {
                         </p>
                     </div>
                 </div>
+                <Footer />
             </main>
         );
     }
@@ -162,6 +164,7 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </main>
     );
 }

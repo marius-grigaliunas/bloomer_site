@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Footer from '@/components/Footer';
 
 export default function PrivacyPolicy() {
   return (
@@ -546,23 +547,8 @@ export default function PrivacyPolicy() {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="mt-12 pt-8 border-t border-secondary-medium/20">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-text-secondary text-sm">
-              © 2025 Bloomer. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <Link href="/" className="text-primary-medium hover:text-primary-deep transition-colors">
-                Home
-              </Link>
-              <Link href="/privacy" className="text-primary-medium hover:text-primary-deep transition-colors">
-                Privacy Policy
-              </Link>
-            </div>
-          </div>
-        </div>
       </div>
+      <Footer />
     </main>
   );
 }

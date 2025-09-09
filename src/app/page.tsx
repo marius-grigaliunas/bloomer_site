@@ -4,6 +4,7 @@ import EmailSignup from '@/components/EmailSignup';
 import WhySection from '@/components/WhySection';
 import AppCarousel from '@/components/AppCarousel';
 import ComingSoon from '@/components/ComingSoon';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -49,6 +50,7 @@ export default function Home() {
           <EmailSignup/>
         </div>
       </div>
+      <Footer />
     </main>
   )
 }
