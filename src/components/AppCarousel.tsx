@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
@@ -12,9 +12,22 @@ const images = [
   '/images/app-screenshots/image5.jpeg',
 ];
 
+// Loading skeleton component
+const ImageSkeleton = ({ className, style }: { className: string; style?: React.CSSProperties }) => (
+  <div 
+    className={`bg-gray-200 animate-pulse rounded-2xl ${className}`}
+    style={style}
+  >
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-16 h-16 bg-gray-300 rounded-full animate-pulse"></div>
+    </div>
+  </div>
+);
+
 export default function AppCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
 
   // Auto-advance carousel every 4 seconds, but pause when user interacts
   useEffect(() => {
@@ -47,6 +60,10 @@ export default function AppCarousel() {
     pauseAndResume();
   };
 
+  const handleImageLoad = (index: number) => {
+    setLoadedImages(prev => new Set(prev).add(index));
+  };
+
 
 
   const getImagePosition = (index: number) => {
@@ -54,17 +71,31 @@ export default function AppCarousel() {
     let diff = index - currentIndex;
     
     // Handle wrapping for infinite loop
-    if (diff > 2) diff -= images.length;
-    if (diff < -2) diff += images.length;
+    if (diff > 1) diff -= images.length;
+    if (diff < -1) diff += images.length;
     
     const positions = {
-      '-2': 'translate-x-[-640px] scale-75 opacity-30',
-      '-1': 'translate-x-[-320px] scale-90 opacity-50',
-      '0': 'translate-x-0 scale-100 opacity-100',
-      '1': 'translate-x-[320px] scale-90 opacity-50',
-      '2': 'translate-x-[640px] scale-75 opacity-30',
+      '-1': 'translate-x-[-200px] scale-90',
+      '0': 'translate-x-0 scale-100',
+      '1': 'translate-x-[200px] scale-90',
     };
-    return positions[diff.toString() as keyof typeof positions] || 'translate-x-[960px] scale-75 opacity-30';
+    return positions[diff.toString() as keyof typeof positions] || 'translate-x-[400px] scale-90';
+  };
+
+  const getImageOpacity = (index: number) => {
+    // Calculate the relative position considering wrapping
+    let diff = index - currentIndex;
+    
+    // Handle wrapping for infinite loop
+    if (diff > 1) diff -= images.length;
+    if (diff < -1) diff += images.length;
+    
+    const opacities = {
+      '-1': 0.25,
+      '0': 1,
+      '1': 0.25,
+    };
+    return opacities[diff.toString() as keyof typeof opacities] || 0;
   };
 
   const isImageVisible = (index: number) => {
@@ -72,40 +103,58 @@ export default function AppCarousel() {
     let diff = index - currentIndex;
     
     // Handle wrapping for infinite loop
-    if (diff > 2) diff -= images.length;
-    if (diff < -2) diff += images.length;
+    if (diff > 1) diff -= images.length;
+    if (diff < -1) diff += images.length;
     
-    // Only show images that are within the visible range (-2 to +2)
-    return diff >= -2 && diff <= 2;
+    // Show images that are within the visible range (-1 to +1)
+    return diff >= -1 && diff <= 1;
   };
 
   return (
     <div className="w-full max-w-8xl mx-auto">
       <div className="relative">
         {/* Main carousel container */}
-        <div className="relative h-[500px] md:h-[700px] flex items-center justify-center overflow-visible">
+        <div className="relative h-[600px] md:h-[900px] flex items-center justify-center overflow-visible">
           {/* All images container */}
           <div className="relative w-full h-full flex items-center justify-center">
             {images.map((image, index) => {
               const position = getImagePosition(index);
               const isVisible = isImageVisible(index);
+              const isLoaded = loadedImages.has(index);
+              const opacity = getImageOpacity(index);
               
               return (
-                <Image
-                  key={index}
-                  src={image}
-                  alt={`Bloomer app screenshot ${index + 1}`}
-                  width={500}
-                  height={500}
-                  className={`absolute transition-all duration-1500 ease-in-out object-contain rounded-2xl shadow-2xl max-w-80 max-h-80 md:max-w-[450px] md:max-h-[450px] ${position}`}
-                  style={{ 
-                    zIndex: index === currentIndex ? 10 : 5,
-                    display: isVisible ? 'block' : 'none',
-                    width: 'auto',
-                    height: 'auto'
-                  }}
-                  priority={index === 0}
-                />
+                <React.Fragment key={index}>
+                  {/* Show skeleton while image is loading */}
+                  {!isLoaded && isVisible && (
+                    <ImageSkeleton 
+                      className={`absolute transition-all duration-1000 ease-in-out max-w-96 max-h-96 md:max-w-[600px] md:max-h-[600px] ${position}`}
+                      style={{ 
+                        zIndex: index === currentIndex ? 10 : 5,
+                        width: 'auto',
+                        height: 'auto',
+                        opacity: isVisible ? opacity : 0
+                      }}
+                    />
+                  )}
+                  
+                  {/* Show actual image once loaded */}
+                  <Image
+                    src={image}
+                    alt={`Bloomer app screenshot ${index + 1}`}
+                    width={700}
+                    height={700}
+                    className={`absolute transition-all duration-1000 ease-in-out object-contain rounded-2xl shadow-2xl max-w-96 max-h-96 md:max-w-[600px] md:max-h-[600px] ${position}`}
+                    style={{ 
+                      zIndex: index === currentIndex ? 10 : 5,
+                      width: 'auto',
+                      height: 'auto',
+                      opacity: isLoaded ? opacity : 0
+                    }}
+                    priority={index === 0}
+                    onLoad={() => handleImageLoad(index)}
+                  />
+                </React.Fragment>
               );
             })}
           </div>
@@ -136,6 +185,24 @@ export default function AppCarousel() {
           </Button>
         </div>
 
+        {/* Dots indicator */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setCurrentIndex(index);
+                pauseAndResume();
+              }}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentIndex 
+                  ? 'bg-primary-deep scale-125' 
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
