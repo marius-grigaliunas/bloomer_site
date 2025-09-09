@@ -17,6 +17,12 @@ export default function WhySection() {
       title: "Never Forget", 
       description: "Notifications when it's time to water. Your plants will thank you.",
       highlight: "Reliable"
+    },
+    {
+      icon: "🤖",
+      title: "AI Care Tips",
+      description: "AI generated plant care tips and common issues to help you become a plant expert.",
+      highlight: "Intelligent"
     }
   ];
 
@@ -27,11 +33,11 @@ export default function WhySection() {
           Why you would <span className="text-brand-purple">love</span> Bloomer
         </h2>
         <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-          Three powerful features that transform plant care from guesswork into a science
+          Four powerful features that transform plant care from guesswork into a science
         </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
         {features.map((feature, index) => (
           <div key={index} className="group text-center bg-[#f8fafc] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-brand-purple-light/30 hover:-translate-y-1 p-8">
             <div className="flex justify-center mb-6">

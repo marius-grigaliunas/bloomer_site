@@ -5,6 +5,7 @@ import WhySection from '@/components/WhySection';
 import AppCarousel from '@/components/AppCarousel';
 import ComingSoon from '@/components/ComingSoon';
 import Footer from '@/components/Footer';
+import JoinTheWaitlistButton from '@/components/ui/JoinTheWaitlistButton';
 
 export default function Home() {
   return (
@@ -25,12 +26,7 @@ export default function Home() {
           <p className="text-lg text-text-secondary/80 max-w-2xl mx-auto mb-6">
             No more guessing, no more plant casualties.
           </p>
-          <button 
-            onClick={() => document.getElementById('email-signup')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-[#48bb78] hover:bg-[#38a169] text-white font-bold py-4 px-8 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
-          >
-            Join the Waitlist →
-          </button>
+          <JoinTheWaitlistButton />
         </div>
 
         {/* App Screenshots Carousel */}

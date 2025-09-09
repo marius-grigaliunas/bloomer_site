@@ -7,10 +7,10 @@
 - [ ] Marketing page
   - [x] Hero section
   - [x] Newsletter signup
-  - [ ] Screenshots, mockups
+  - [x] Screenshots, mockups
   - [ ] The why
-  - [ ] The when
-  - [ ] by who
+  - [x] The when
+  - [x] by who
 - [ ] Appwrite backend with database
   - [x] Simple newsletter collection in the app's database
   - [ ] login?
