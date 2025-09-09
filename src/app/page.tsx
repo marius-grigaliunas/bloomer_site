@@ -6,13 +6,14 @@ import AppCarousel from '@/components/AppCarousel';
 import ComingSoon from '@/components/ComingSoon';
 import Footer from '@/components/Footer';
 import JoinTheWaitlistButton from '@/components/ui/JoinTheWaitlistButton';
+import FAQ from '@/components/FAQ';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background-primary flex flex-col items-center justify-center p-8 pt-24">
+    <main className="min-h-screen bg-background-primary flex flex-col items-center justify-center p-8">
       <div className="text-center max-w-5xl">
-        <div className="pt-12 pb-16">
-          <div className="mb-8">
+        <div className="pt-6">
+          <div className="">
             <span className="inline-block bg-gradient-to-r from-brand-purple to-brand-purple-light text-white font-semibold px-6 py-2 rounded-full text-sm md:text-base animate-slow-pulse">
               Coming Soon for Android
             </span>
@@ -30,20 +31,24 @@ export default function Home() {
         </div>
 
         {/* App Screenshots Carousel */}
-        <div className="py-16">
+        <div id="app-screenshots">
           <AppCarousel />
         </div>
 
-        <div className="py-16">
+        <div id="why" className='py-8'>
           <WhySection />
         </div>
         
-        <div className="py-16">
+        <div id="coming-soon" className='py-8'>
           <ComingSoon />
         </div>
         
-        <div id="email-signup" className="py-16">
+        <div id="email-signup" className='py-8'>
           <EmailSignup/>
+        </div>
+        
+        <div id="faq" className='py-16'>
+          <FAQ />
         </div>
       </div>
       <Footer />

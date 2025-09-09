@@ -114,7 +114,7 @@ export default function AppCarousel() {
     <div className="w-full max-w-8xl mx-auto">
       <div className="relative">
         {/* Main carousel container */}
-        <div className="relative h-[600px] md:h-[900px] flex items-center justify-center overflow-visible">
+        <div className="relative h-[600px] md:h-[750px] flex items-center justify-center overflow-visible">
           {/* All images container */}
           <div className="relative w-full h-full flex items-center justify-center">
             {images.map((image, index) => {
@@ -186,7 +186,7 @@ export default function AppCarousel() {
         </div>
 
         {/* Dots indicator */}
-        <div className="flex justify-center mt-8 space-x-2">
+        <div className="flex justify-center mt-2 space-x-2">
           {images.map((_, index) => (
             <button
               key={index}
