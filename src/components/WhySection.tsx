@@ -3,33 +3,33 @@ export default function WhySection() {
     {
       icon: "📸",
       title: "Snap & Identify",
-      description: "Take 5 photos and instantly know your plant species and care needs.",
+      description: "Take 5 photos and instantly know your plant species and care needs. Our AI analyzes your plant from multiple angles to provide accurate identification and detailed care instructions.",
       highlight: "AI-powered"
     },
     {
       icon: "💧", 
       title: "Smart Watering",
-      description: "Personalized and optimized watering schedules based on your plant. No more guessing!",
+      description: "Personalized and optimized watering schedules based on your plant species, season, and environment. No more guessing when to water your plants!",
       highlight: "Personalized"
     },
     {
       icon: "🔔",
       title: "Never Forget", 
-      description: "Notifications when it's time to water. Your plants will thank you.",
+      description: "Smart notifications remind you when it's time to water, fertilize, or repot your plants. Your plants will thank you for the consistent care.",
       highlight: "Reliable"
     },
     {
       icon: "🤖",
       title: "AI Care Tips",
-      description: "AI generated plant care tips and common issues to help you become a plant expert.",
+      description: "Get AI-generated plant care tips, troubleshooting guides, and expert advice to help you become a plant care expert and keep your plants thriving.",
       highlight: "Intelligent"
     }
   ];
 
   return (
-    <div className="w-full max-w-7xl">
+    <section className="w-full max-w-7xl" aria-labelledby="why-heading">
       <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-black text-text-primary mb-6">
+        <h2 id="why-heading" className="text-5xl md:text-6xl font-black text-text-primary mb-6">
           Why you would <span className="text-brand-purple">love</span> Bloomer
         </h2>
         <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
@@ -39,9 +39,9 @@ export default function WhySection() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
         {features.map((feature, index) => (
-          <div key={index} className="group text-center bg-[#f8fafc] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-brand-purple-light/30 hover:-translate-y-1 p-8">
+          <article key={index} className="group text-center bg-[#f8fafc] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-brand-purple-light/30 hover:-translate-y-1 p-8">
             <div className="flex justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-brand-purple/20 to-brand-purple-light/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-brand-purple/20 to-brand-purple-light/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                 <span className="text-4xl">{feature.icon}</span>
               </div>
             </div>
@@ -52,9 +52,9 @@ export default function WhySection() {
             </div>
             <h3 className="text-2xl font-bold text-text-primary mb-4">{feature.title}</h3>
             <p className="text-text-secondary leading-relaxed">{feature.description}</p>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

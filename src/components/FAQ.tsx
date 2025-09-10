@@ -31,14 +31,36 @@ export default function FAQ() {
     }
   ];
 
+  // Structured data for FAQ section - helps AI search engines understand the content
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="w-full max-w-4xl">
+    <div className="w-full max-w-5xl">
+      {/* Structured data for FAQ section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData),
+        }}
+      />
+      
       <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-black text-text-primary mb-6">
+        <h2 id="faq-heading" className="text-5xl md:text-6xl font-black text-text-primary mb-6">
           Frequently Asked <span className="text-brand-purple">Questions</span>
         </h2>
         <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
@@ -46,17 +68,22 @@ export default function FAQ() {
         </p>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-4" role="region" aria-labelledby="faq-heading">
         {faqs.map((faq, index) => (
-          <div
+          <article
             key={index}
             className="bg-white rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 overflow-hidden"
+            itemScope
+            itemType="https://schema.org/Question"
           >
             <button
               onClick={() => toggleFAQ(index)}
-              className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
+              className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-opacity-50"
+              aria-expanded={openIndex === index}
+              aria-controls={`faq-answer-${index}`}
+              aria-describedby={`faq-answer-${index}`}
             >
-              <h3 className="text-xl font-bold text-text-primary pr-4">
+              <h3 className="text-xl font-bold text-text-primary pr-4" itemProp="name">
                 {faq.question}
               </h3>
               <div className="flex-shrink-0">
@@ -68,6 +95,7 @@ export default function FAQ() {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"
@@ -80,20 +108,25 @@ export default function FAQ() {
               </div>
             </button>
             
-            <div className={`transition-all duration-300 ease-in-out ${
-              openIndex === index 
-                ? 'max-h-96 opacity-100' 
-                : 'max-h-0 opacity-0'
-            } overflow-hidden`}>
+            <div 
+              id={`faq-answer-${index}`}
+              className={`transition-all duration-300 ease-in-out ${
+                openIndex === index 
+                  ? 'max-h-96 opacity-100' 
+                  : 'max-h-0 opacity-0'
+              } overflow-hidden`}
+              itemScope
+              itemType="https://schema.org/Answer"
+            >
               <div className="px-8 pb-6">
                 <div className="border-t border-gray-100 pt-4">
-                  <p className="text-text-secondary leading-relaxed text-left">
+                  <p className="text-text-secondary leading-relaxed text-left" itemProp="text">
                     {faq.answer}
                   </p>
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>

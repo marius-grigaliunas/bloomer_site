@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bloomer-app.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all search engines to index the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to admin or sensitive areas (if any exist in future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow access to CSS and JS files for proper rendering
+Allow: /_next/static/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js

@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background-primary flex flex-col items-center justify-center p-8">
       <div className="text-center max-w-5xl">
-        <div className="pt-6">
-          <div className="">
-            <span className="inline-block bg-gradient-to-r from-brand-purple to-brand-purple-light text-white font-semibold px-6 py-2 rounded-full text-sm md:text-base animate-slow-pulse">
+        <header className="pt-6">
+          <div className="mb-6">
+            <span className="inline-block bg-gradient-to-r from-brand-purple to-brand-purple-light text-white font-semibold px-6 py-2 rounded-full text-sm md:text-base animate-slow-pulse" role="banner">
               Coming Soon for Android
             </span>
           </div>
@@ -27,29 +27,32 @@ export default function Home() {
           <p className="text-lg text-text-secondary/80 max-w-2xl mx-auto mb-6">
             No more guessing, no more plant casualties.
           </p>
-          <JoinTheWaitlistButton />
-        </div>
+          <div className="mb-8">
+            <JoinTheWaitlistButton />
+          </div>
+        </header>
 
         {/* App Screenshots Carousel */}
-        <div id="app-screenshots">
+        <section id="app-screenshots" aria-labelledby="app-screenshots-heading">
+          <h2 id="app-screenshots-heading" className="sr-only">Bloomer App Screenshots</h2>
           <AppCarousel />
-        </div>
+        </section>
 
-        <div id="why" className='py-8'>
+        <section id="why" className='py-8' aria-labelledby="why-heading">
           <WhySection />
-        </div>
+        </section>
         
-        <div id="coming-soon" className='py-8'>
+        <section id="coming-soon" className='py-8' aria-labelledby="coming-soon-heading">
           <ComingSoon />
-        </div>
+        </section>
         
-        <div id="email-signup" className='py-8'>
+        <section id="email-signup" className='py-8' aria-labelledby="email-signup-heading">
           <EmailSignup/>
-        </div>
+        </section>
         
-        <div id="faq" className='py-16'>
+        <section id="faq" className='py-16' aria-labelledby="faq-heading">
           <FAQ />
-        </div>
+        </section>
       </div>
       <Footer />
     </main>

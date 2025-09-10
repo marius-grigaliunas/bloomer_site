@@ -141,7 +141,7 @@ export default function AppCarousel() {
                   {/* Show actual image once loaded */}
                   <Image
                     src={image}
-                    alt={`Bloomer app screenshot ${index + 1}`}
+                    alt={`Bloomer plant care app screenshot ${index + 1} showing AI plant identification and watering schedule features`}
                     width={700}
                     height={700}
                     className={`absolute transition-all duration-1000 ease-in-out object-contain rounded-2xl shadow-2xl max-w-96 max-h-96 md:max-w-[600px] md:max-h-[600px] ${position}`}
@@ -152,7 +152,9 @@ export default function AppCarousel() {
                       opacity: isLoaded ? opacity : 0
                     }}
                     priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
                     onLoad={() => handleImageLoad(index)}
+                    sizes="(max-width: 768px) 384px, 600px"
                   />
                 </React.Fragment>
               );
