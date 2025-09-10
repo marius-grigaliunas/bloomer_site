@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en-GB',
     url: 'https://bloomer-app.com',
     siteName: 'Bloomer - AI Plant Care App',
     title: 'Bloomer - AI Plant Care App | Never Kill Another Plant Again',

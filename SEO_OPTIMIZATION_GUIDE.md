@@ -253,9 +253,9 @@ npm run start
 
 ### Support Resources
 
-- Google Search Central: https://developers.google.com/search
-- Web.dev Performance: https://web.dev/performance/
-- MDN Accessibility: https://developer.mozilla.org/en-US/docs/Web/Accessibility
+- Google Search Central: <https://developers.google.com/search>
+- Web.dev Performance: <https://web.dev/performance/>
+- MDN Accessibility: <https://developer.mozilla.org/en-US/docs/Web/Accessibility>
 
 ---
 
