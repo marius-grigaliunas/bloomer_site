@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { validateEmail } from '@/lib/emailValidation';
 import { SubmitUserMessage } from '@/lib/appwrite';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function Contact() {
     const [email, setEmail] = useState('');
@@ -47,8 +48,8 @@ export default function Contact() {
             <main className="min-h-screen bg-background-primary flex flex-col items-center justify-center p-8 pt-24">
                 <div className="text-center max-w-2xl">
                     <div className="mb-12">
-                        <div className="inline-flex items-center justify-center w-20 h-20 bg-success/20 rounded-full mb-6">
-                            <span className="text-4xl">🌱</span>
+                        <div className="w-20 h-20 flex items-center justify-center mr-3">
+                            <Image src="/images/bloomer-logo-nobackground.png" alt="Bloomer" width={52} height={52}/>
                         </div>
                         <h1 className="text-5xl font-bold text-text-primary mb-6">
                             Message Sent!
