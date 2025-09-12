@@ -19,7 +19,7 @@ export default function FAQ() {
     },
     {
         question: "Will Bloomer be available for iOS devices?",
-        answer: "Bloomer is currently planned only for android devices, but with enough request and resouces iOS release will happen."
+        answer: "Bloomer is currently planned only for android devices, but with enough requests and resouces iOS release will happen."
     },
     {
       question: "What types of plants can Bloomer identify?",
