@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
             ← Back to Bloomer
           </Link>
           <h1 className="text-4xl font-bold text-text-primary mb-4">
-            Website's privacy policy
+            Website&apos;s privacy policy
           </h1>
           <p className="text-text-secondary">
             Last updated September 04, 2025

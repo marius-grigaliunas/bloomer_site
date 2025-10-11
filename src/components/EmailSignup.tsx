@@ -128,7 +128,7 @@ export default function EmailSignup() {
                 <p className="text-sm text-white/80">
                     By signing up, you agree to our{' '}
                     <Link href="/privacy" className="text-white hover:text-white/80 underline">
-                        Website's privacy policy
+                        Website&apos;s privacy policy
                     </Link>
                 </p>
             </div>
