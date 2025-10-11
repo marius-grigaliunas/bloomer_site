@@ -50,7 +50,15 @@ export default function Footer() {
                   href="/privacy" 
                   className="text-text-secondary hover:text-primary-medium transition-colors duration-200"
                 >
-                  Privacy Policy
+                  Website's privacy policy
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/app-privacy" 
+                  className="text-text-secondary hover:text-primary-medium transition-colors duration-200"
+                >
+                  App's privacy policy
                 </Link>
               </li>
             </ul>

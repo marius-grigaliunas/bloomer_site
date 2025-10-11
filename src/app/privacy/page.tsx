@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
             ← Back to Bloomer
           </Link>
           <h1 className="text-4xl font-bold text-text-primary mb-4">
-            PRIVACY POLICY
+            Website's privacy policy
           </h1>
           <p className="text-text-secondary">
             Last updated September 04, 2025
@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
             
             <section>
               <p className="text-text-secondary leading-relaxed">
-                This Privacy Notice for Bloomer (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), describes how and why we might access, collect, store, use, and/or share (&quot;process&quot;) your personal information when you use our services (&quot;Services&quot;), including when you:
+                This Privacy Notice for Bloomer website (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), describes how and why we might access, collect, store, use, and/or share (&quot;process&quot;) your personal information when you use our services (&quot;Services&quot;), including when you:
               </p>
               <ul className="list-disc list-inside space-y-2 text-text-secondary mt-4">
                 <li>Visit our website at <a href="https://bloomerapp.info" target="_blank" rel="noopener noreferrer" className="text-primary-medium hover:text-primary-deep underline">https://bloomerapp.info</a> or any website of ours that links to this Privacy Notice</li>

@@ -34,7 +34,8 @@ export default function Navbar() {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/contact', label: 'Contact' },
-    { href: '/privacy', label: 'Privacy' },
+    { href: '/privacy', label: "Website's privacy policy" },
+    { href: '/app-privacy', label: "App's privacy policy" },
   ];
 
   return (
