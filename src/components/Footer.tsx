@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center space-x-2">
               <span className="inline-block bg-gradient-to-r from-brand-purple to-brand-purple-light text-white font-semibold px-4 py-1 rounded-full text-sm">
-                Coming Soon for Android
+                Released for Android devices
               </span>
             </div>
           </div>

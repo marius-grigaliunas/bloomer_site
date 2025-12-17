@@ -4,7 +4,7 @@ export default function JoinTheWaitlistButton() {
             onClick={() => document.getElementById('email-signup')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-[#48bb78] hover:bg-[#38a169] text-white font-bold py-4 px-8 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
         >
-            Join the Waitlist →
+            Install the app on android devices!
         </button>
     );
 }

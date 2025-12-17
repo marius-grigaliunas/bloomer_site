@@ -15,7 +15,7 @@ export default function WhySection() {
     {
       icon: "🔔",
       title: "Never Forget", 
-      description: "Smart notifications remind you when it's time to water, fertilize, or repot your plants. Your plants will thank you for the consistent care.",
+      description: "Smart notifications remind you when it's time to water your plants. Your plants will thank you for the consistent care.",
       highlight: "Reliable"
     },
     {

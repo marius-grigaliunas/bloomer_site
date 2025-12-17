@@ -14,10 +14,6 @@ export default function FAQ() {
       answer: "Yes! Bloomer will be free to download and use. I created this app as both a learning project and to help people like me stop accidentally killing their plants! It's designed for Android devices, and I'm working hard to ensure the best possible experience. Join the waitlist to be the first to know when I launch and get early access!"
     },
     {
-        question: "When will Bloomer be available?",
-        answer: "Bloomer is currently in development and will be launching soon, at the end of September for Android devices. Join the waitlist to be the first to know when the app is out."
-    },
-    {
         question: "Will Bloomer be available for iOS devices?",
         answer: "Bloomer is currently planned only for android devices, but with enough requests and resouces iOS release will happen."
     },

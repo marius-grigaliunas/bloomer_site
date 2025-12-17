@@ -12,10 +12,10 @@ export default function ComingSoon() {
                 </div>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-text-primary mb-6">
-              Coming <span className="text-brand-purple">Soon</span>
+              Released for Android devices on Google Play store
             </h2>
             <p className="text-xl text-text-secondary leading-relaxed mb-4">
-              We&apos;re putting the finishing touches on Bloomer and will be launching soon for <span className="font-semibold text-primary-medium">Android devices</span>
+              The app is now finished and released for <span className="font-semibold text-primary-medium">Android devices</span>
             </p>
         </div>
         

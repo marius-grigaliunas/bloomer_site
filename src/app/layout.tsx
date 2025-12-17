@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Bloomer - AI Plant Care App | Never Kill Another Plant Again",
-  description: "Bloomer uses AI to identify your plants and create personalized watering schedules. Get smart plant care tips, watering reminders, and never kill another plant again. Coming soon for Android.",
+  description: "Bloomer uses AI to identify your plants and create personalized watering schedules. Get smart plant care tips, watering reminders, and never kill another plant again. Released for Android.",
   keywords: [
     "plant care app",
     "AI plant identification", 
